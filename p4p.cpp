@@ -1,7 +1,7 @@
 #include <iostream>
 #include <limits>
 #include "p4p.h"
-#include <lambdatwist/lambdatwist.p3p.h>
+#include "lambdatwist/lambdatwist.p3p.h"
 
 
 using std::cout;using std::endl;

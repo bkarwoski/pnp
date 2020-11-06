@@ -1,9 +1,9 @@
 #pragma once
 
-#include <lambdatwist/solve_cubic.h>
-#include <lambdatwist/solve_eig0.h>
-#include <lambdatwist/refine_lambda.h>
-#include <lambdatwist/p3p_timers.h>
+#include "solve_cubic.h"
+#include "solve_eig0.h"
+#include "refine_lambda.h"
+#include "p3p_timers.h"
 
 
 

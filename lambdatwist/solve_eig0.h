@@ -1,6 +1,6 @@
 #pragma once
-#include <lambdatwist/p3p_timers.h>
-#include <lambdatwist/solve_cubic.h>
+#include "p3p_timers.h"
+#include "solve_cubic.h"
 namespace cvl{
 /**
  * @brief eigwithknown0 eigen decomp of a matrix which has a 0 eigen value

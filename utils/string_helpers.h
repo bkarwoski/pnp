@@ -7,7 +7,7 @@
 #include <sstream>
 #include <iomanip>
 
-#include <utils/vector_utils.h>
+#include "vector_utils.h"
 
 typedef unsigned int uint;
 

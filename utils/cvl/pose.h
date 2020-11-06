@@ -26,8 +26,8 @@
  *
  ******************************************************************************/
 
-#include <utils/cvl/matrix.h>
-#include <utils/cvl/rotation_helpers.h>
+#include "matrix.h"
+#include "rotation_helpers.h"
 #include <vector>
 namespace cvl{
 
