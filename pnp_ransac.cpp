@@ -177,6 +177,7 @@ Vector4<uint> get4RandomInRange0(uint max){
 
 PoseD PNP::compute(){
     double err_portion = ((double)xs.size() - best_inliers) / ((double)xs.size());
+    // cout << "pnp_ransac err portion" << err_portion << endl;
     uint iters=params.get_iterations(params.min_probability, err_portion, 4, params.max_iterations);
     uint i;
     for(i=0;i<iters;++i){
@@ -189,7 +190,7 @@ PoseD PNP::compute(){
 
         // evaluate inlier set
         uint inliers=evaluate_inlier_set(xs,yns,params.threshold,pose,best_inliers);
-
+        // cout << "inliers: " << inliers << endl;
         if(inliers>best_inliers){
             best_inliers=inliers;
             best_pose=pose;
