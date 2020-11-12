@@ -49,8 +49,6 @@ uint evaluate_inlier_set(const std::vector<cvl::Vector3D>& xs,
 
     for(uint i=0;i<xs.size();++i){
 
-        //cout<<((pose*xs[i]).dehom() - yns[i]).squaredNorm()<<"   "<<threshold_squared<<endl;
-
         cvl::Vector4D X=xs[i].homogeneous(); // yes even with the extra cost here...
 //        Vector3D XR=(M*X).dehom(); // technically based on how 4x4 etc work, no dehom required
         Vector4D XR=(M*X);
@@ -177,7 +175,6 @@ Vector4<uint> get4RandomInRange0(uint max){
 
 PoseD PNP::compute(){
     double err_portion = ((double)xs.size() - best_inliers) / ((double)xs.size());
-    // cout << "pnp_ransac err portion" << err_portion << endl;
     uint iters=params.get_iterations(params.min_probability, err_portion, 4, params.max_iterations);
     uint i;
     for(i=0;i<iters;++i){
@@ -190,7 +187,6 @@ PoseD PNP::compute(){
 
         // evaluate inlier set
         uint inliers=evaluate_inlier_set(xs,yns,params.threshold,pose,best_inliers);
-        // cout << "inliers: " << inliers << endl;
         if(inliers>best_inliers){
             best_inliers=inliers;
             best_pose=pose;
@@ -293,7 +289,6 @@ void PNP::refine(){
         }
         ceres::Solver::Summary summary;
         ceres::Solve(options, &problem, &summary);
-        //cout<<"Report 1: \n"<<summary.FullReport()<<endl;
     }
 
 }
