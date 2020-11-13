@@ -72,10 +72,11 @@ uint evaluate_inlier_set(const std::vector<cvl::Vector3D>& xs,
         double err=err1*err1 + err2*err2;
 
         inliers += (err < threshold_squared) ? 1 : 0;
-        //mle += std::min(errors[i],thr);// use this to compute mle instead...
         // highest number of inliers possible at this point. inliers + (xs.size()) -i
         if(((xs.size()-i +inliers)<best_inliers)) break;
     }
+    uint min_inliers = 4;
+    inliers = std::min(min_inliers, inliers);
     return inliers;
 
 }
